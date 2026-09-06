@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@custom-variant light (&:where(.light, .light *));
+
+:root {
+  --background: #F6F7FB;
+  --foreground: #1A1D26;
+  --card: #FFFFFF;
+  --card-foreground: #1A1D26;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1D26;
+  --primary: #5D5FEF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #ECEBFF;
+  --secondary-foreground: #5D5FEF;
+  --muted: #F6F7FB;
+  --muted-foreground: #7D8592;
+  --accent: #ECEBFF;
+  --accent-foreground: #5D5FEF;
+  --destructive: #FF754C;
+  --destructive-foreground: #FFFFFF;
+  --border: #F0F1F5;
+  --input: #F0F1F5;
+  --ring: #5D5FEF;
+  --radius: 1rem;
+}
+
+html.light {
+  --background: #F6F7FB;
+  --foreground: #1A1D26;
+  --card: #FFFFFF;
+  --card-foreground: #1A1D26;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1D26;
+  --primary: #5D5FEF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #ECEBFF;
+  --secondary-foreground: #5D5FEF;
+  --muted: #F6F7FB;
+  --muted-foreground: #7D8592;
+  --accent: #ECEBFF;
+  --accent-foreground: #5D5FEF;
+  --destructive: #FF754C;
+  --destructive-foreground: #FFFFFF;
+  --border: #F0F1F5;
+  --input: #F0F1F5;
+  --ring: #5D5FEF;
+}
+
+html.dark {
+  --background: #000000;
+  --foreground: #EDEDED;
+  --card: #0A0A0A;
+  --card-foreground: #EDEDED;
+  --popover: #111111;
+  --popover-foreground: #EDEDED;
+  --primary: #FFFFFF;
+  --primary-foreground: #000000;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #EDEDED;
+  --muted: #111111;
+  --muted-foreground: #888888;
+  --accent: #1A1A1A;
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF754C;
+  --destructive-foreground: #FFFFFF;
+  --border: #222222;
+  --input: #2E2E2E;
+  --ring: #5D5FEF;
+}
+
+/* Ensure root html & body have seamless theme background and zero rogue outlines/borders */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  font-family: var(--font-roboto), var(--font-open-sans), Roboto, "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Eliminate unwanted white border/outline around the viewport and focus targets */
+html:focus,
+html:focus-visible,
+body:focus,
+body:focus-visible,
+:focus,
+:focus-visible {
+  outline: none !important;
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Smooth subtle transitions for layout colors */
+html,
+body,
+header,
+aside,
+main,
+nav {
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  border-color: var(--border);
+}
