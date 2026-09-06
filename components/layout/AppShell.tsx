@@ -20,7 +20,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const mobileNavOpen = useAppSelector((state) => state.ui.mobileNavOpen);
 
   return (
-    <div className="flex h-full w-full min-h-screen overflow-hidden bg-[#F6F7FB] text-[#1A1D26] dark:bg-[#000000] dark:text-[#EDEDED] antialiased font-sans border-0 outline-none ring-0">
+    <div className="flex h-full w-full min-h-screen overflow-hidden bg-[#F6F7FB] text-[#1A1D26] dark:bg-[#090D16] dark:text-[#EDEDED] antialiased font-sans border-0 outline-none ring-0">
       {/* Desktop Left Sidebar */}
       <div className="hidden md:flex shrink-0">
         <Sidebar />

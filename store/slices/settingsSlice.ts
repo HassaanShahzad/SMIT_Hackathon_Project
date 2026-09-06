@@ -15,7 +15,7 @@ export interface AppSettings {
 }
 
 const DEFAULT_SETTINGS: AppSettings = {
-  theme: 'light',
+  theme: 'dark',
   compactMode: false,
   simulateNetworkDelay: false,
   delayMs: 350,
@@ -37,7 +37,7 @@ export const settingsSlice = createSlice({
     hydrateSettings: (state) => {
       const stored = getData<AppSettings>(STORAGE_KEYS.SETTINGS, DEFAULT_SETTINGS);
       const directTheme = typeof window !== 'undefined' ? (localStorage.getItem('theme') as AppTheme) : null;
-      const theme = directTheme || stored.theme || DEFAULT_SETTINGS.theme;
+      const theme = directTheme || stored?.theme || DEFAULT_SETTINGS.theme;
       return { ...state, ...stored, theme };
     },
     setTheme: (state, action: PayloadAction<AppTheme>) => {

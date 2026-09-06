@@ -61,9 +61,15 @@ export function Navbar() {
   const notifications = useAppSelector((state) => state.notification.notifications);
 
   const currentTheme = useAppSelector((state) => state.settings.theme);
-  const isDark =
-    currentTheme === 'dark' ||
-    (currentTheme !== 'light' && typeof document !== 'undefined' && document.documentElement.classList.contains('dark'));
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted
+    ? (currentTheme === 'dark' || (currentTheme !== 'light' && typeof document !== 'undefined' && document.documentElement.classList.contains('dark')))
+    : true;
 
   const toggleTheme = () => {
     const nextTheme: AppTheme = isDark ? 'light' : 'dark';
@@ -236,6 +242,23 @@ export function Navbar() {
             </div>
           </PopoverContent>
         </Popover>
+
+        {/* Theme Toggle Button */}
+        <Button
+          id="theme-toggle-button"
+          variant="ghost"
+          size="icon"
+          onClick={toggleTheme}
+          title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          aria-label={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          className="text-[#1A1D26] dark:text-[#EDEDED] hover:bg-[#F6F7FB] dark:hover:bg-[#111111] rounded-xl cursor-pointer"
+        >
+          {isDark ? (
+            <Sun className="w-4 h-4 text-amber-400 hover:rotate-45 transition-transform" />
+          ) : (
+            <Moon className="w-4 h-4 text-slate-700 dark:text-slate-200 hover:-rotate-12 transition-transform" />
+          )}
+        </Button>
 
         {/* User Profile Menu with Presence Indicator */}
         <DropdownMenu>

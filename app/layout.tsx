@@ -37,18 +37,22 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                const theme = localStorage.getItem('theme');
-                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark');
-                } else {
+                const theme = localStorage.getItem('theme') || 'dark';
+                if (theme === 'light') {
                   document.documentElement.classList.remove('dark');
+                  document.documentElement.classList.add('light');
+                } else {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.classList.remove('light');
                 }
-              } catch (e) {}
+              } catch (e) {
+                document.documentElement.classList.add('dark');
+              }
             `,
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#F6F7FB] dark:bg-[#000000] text-[#1A1D26] dark:text-[#EDEDED] font-sans">
+      <body className="min-h-full flex flex-col bg-[#F6F7FB] dark:bg-[#090D16] text-[#1A1D26] dark:text-[#EDEDED] font-sans">
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>

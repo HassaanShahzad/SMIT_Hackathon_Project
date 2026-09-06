@@ -4,24 +4,24 @@
 @custom-variant light (&:where(.light, .light *));
 
 :root {
-  --background: #F6F7FB;
-  --foreground: #1A1D26;
-  --card: #FFFFFF;
-  --card-foreground: #1A1D26;
-  --popover: #FFFFFF;
-  --popover-foreground: #1A1D26;
+  --background: #090D16;
+  --foreground: #EDEDED;
+  --card: #0A0A0A;
+  --card-foreground: #EDEDED;
+  --popover: #111111;
+  --popover-foreground: #EDEDED;
   --primary: #5D5FEF;
   --primary-foreground: #FFFFFF;
-  --secondary: #ECEBFF;
-  --secondary-foreground: #5D5FEF;
-  --muted: #F6F7FB;
-  --muted-foreground: #7D8592;
-  --accent: #ECEBFF;
-  --accent-foreground: #5D5FEF;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #EDEDED;
+  --muted: #111111;
+  --muted-foreground: #888888;
+  --accent: #1A1A1A;
+  --accent-foreground: #FFFFFF;
   --destructive: #FF754C;
   --destructive-foreground: #FFFFFF;
-  --border: #E5E7EB;
-  --input: #E5E7EB;
+  --border: #222222;
+  --input: #2E2E2E;
   --ring: #5D5FEF;
   --radius: 1rem;
 }
@@ -51,14 +51,14 @@ html.light,
 
 html.dark,
 .dark {
-  --background: #000000;
+  --background: #090D16;
   --foreground: #EDEDED;
   --card: #0A0A0A;
   --card-foreground: #EDEDED;
   --popover: #111111;
   --popover-foreground: #EDEDED;
-  --primary: #FFFFFF;
-  --primary-foreground: #000000;
+  --primary: #5D5FEF;
+  --primary-foreground: #FFFFFF;
   --secondary: #1A1A1A;
   --secondary-foreground: #EDEDED;
   --muted: #111111;

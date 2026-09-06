@@ -65,7 +65,7 @@ function HydrationGate({ children }: { children: React.ReactNode }) {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-[#F6F7FB] dark:bg-[#000000] flex items-center justify-center">
+      <div className="min-h-screen bg-[#F6F7FB] dark:bg-[#090D16] flex items-center justify-center">
         <div className="flex flex-col items-center space-y-4">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#5D5FEF] to-violet-500 animate-pulse flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/30">
             W
