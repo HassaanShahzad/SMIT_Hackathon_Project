@@ -4,7 +4,7 @@
 @custom-variant light (&:where(.light, .light *));
 
 :root {
-  --background: #090D16;
+  --background: #000000;
   --foreground: #EDEDED;
   --card: #0A0A0A;
   --card-foreground: #EDEDED;
@@ -51,7 +51,7 @@ html.light,
 
 html.dark,
 .dark {
-  --background: #090D16;
+  --background: #000000;
   --foreground: #EDEDED;
   --card: #0A0A0A;
   --card-foreground: #EDEDED;

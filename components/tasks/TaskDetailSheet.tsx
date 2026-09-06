@@ -903,7 +903,7 @@ export function TaskDetailSheet() {
                 Select Target Parent Task
               </label>
               <Select value={targetParentTaskId} onValueChange={setTargetParentTaskId}>
-                <SelectTrigger className="w-full text-xs bg-white dark:bg-slate-950">
+                <SelectTrigger className="w-full text-xs bg-white dark:bg-[#111111]">
                   <SelectValue placeholder="Select target parent task..." />
                 </SelectTrigger>
                 <SelectContent className="max-h-60">

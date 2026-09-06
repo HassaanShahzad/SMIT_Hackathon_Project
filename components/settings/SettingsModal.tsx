@@ -265,7 +265,7 @@ export function SettingsModal() {
                     value={wsName}
                     onChange={(e) => setWsName(e.target.value)}
                     placeholder="Workspace Name"
-                    className="bg-white dark:bg-slate-900"
+                    className="bg-white dark:bg-[#111111]"
                   />
                   <Button size="sm" className="bg-purple-600 hover:bg-purple-700 text-white" onClick={handleSaveGeneral}>
                     Save

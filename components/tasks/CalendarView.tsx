@@ -141,8 +141,8 @@ export function CalendarView({ filteredTasks }: CalendarViewProps) {
                 key={idx}
                 className={`min-h-[110px] p-2 transition-colors relative flex flex-col justify-between ${
                   cell.isCurrentMonth
-                    ? 'bg-transparent hover:bg-[#F2EDF3]/30 dark:hover:bg-slate-800/20'
-                    : 'bg-[#F2EDF3]/40 text-[#9C9FA6] dark:bg-slate-950/40'
+                    ? 'bg-transparent hover:bg-[#F2EDF3]/30 dark:hover:bg-[#1A1A1A]/40'
+                    : 'bg-[#F2EDF3]/40 text-[#9C9FA6] dark:bg-[#111111]/40'
                 }`}
               >
                 <div className="flex items-center justify-between mb-1.5">

@@ -224,7 +224,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-4 sm:p-6 bg-[#F6F7FB] dark:bg-[#090D16] text-[#1A1D26] dark:text-[#EDEDED] transition-colors border-0 outline-none ring-0">
+    <div className="min-h-screen w-full flex items-center justify-center p-4 sm:p-6 bg-[#F6F7FB] dark:bg-[#000000] text-[#1A1D26] dark:text-[#EDEDED] transition-colors border-0 outline-none ring-0">
       {/* Absolute Header Controls */}
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
 

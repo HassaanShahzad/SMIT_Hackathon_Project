@@ -379,7 +379,7 @@ export function ListView({ filteredTasks }: ListViewProps) {
     <div className="space-y-3 pb-8">
       {/* Floating Bulk Actions Bar (Section 28) */}
       {selectedTaskIds.length > 0 && (
-        <div className="sticky top-14 z-20 flex items-center justify-between p-3 rounded-2xl border border-[#B66DFF]/40 bg-white/95 dark:bg-slate-900/95 shadow-xl backdrop-blur-md">
+        <div className="sticky top-14 z-20 flex items-center justify-between p-3 rounded-2xl border border-[#B66DFF]/40 bg-white/95 dark:bg-[#0A0A0A]/95 shadow-xl backdrop-blur-md">
           <div className="flex items-center space-x-2 text-xs text-[#343A40] dark:text-purple-300 font-bold">
             <CheckSquare className="w-4 h-4 text-[#B66DFF]" />
             <span>
@@ -468,7 +468,7 @@ export function ListView({ filteredTasks }: ListViewProps) {
 
                   return (
                     <React.Fragment key={group.id}>
-                      <tr className="bg-[#F2EDF3]/40 dark:bg-slate-900/80">
+                      <tr className="bg-[#F2EDF3]/40 dark:bg-[#111111]/80">
                         <td colSpan={8} className="py-2.5 px-4 font-bold text-[#343A40] dark:text-slate-200">
                           <div className="flex items-center space-x-2">
                             <span className={`w-2 h-2 rounded-full ${group.color}`} />

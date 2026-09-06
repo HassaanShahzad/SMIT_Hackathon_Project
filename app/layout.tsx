@@ -52,7 +52,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#F6F7FB] dark:bg-[#090D16] text-[#1A1D26] dark:text-[#EDEDED] font-sans">
+      <body className="min-h-full flex flex-col bg-[#F6F7FB] dark:bg-[#000000] text-[#1A1D26] dark:text-[#EDEDED] font-sans">
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>

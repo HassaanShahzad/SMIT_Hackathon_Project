@@ -20,7 +20,7 @@ export default function RootPage() {
   }, [isAuthenticated, currentUser, router]);
 
   return (
-    <div className="min-h-screen bg-[#F6F7FB] dark:bg-[#090D16] flex items-center justify-center">
+    <div className="min-h-screen bg-[#F6F7FB] dark:bg-[#000000] flex items-center justify-center">
       <div className="w-8 h-8 rounded-xl bg-[#5D5FEF] animate-pulse" />
     </div>
   );
