@@ -11,6 +11,8 @@ interface UIState {
   mobileNavOpen: boolean;
   isCreateTaskOpen: boolean;
   createTaskDefaultStatus?: 'BACKLOG' | 'TODO' | 'IN_PROGRESS' | 'DONE';
+  isEditTaskOpen: boolean;
+  editingTaskId: string | null;
   isCreateProjectOpen: boolean;
   isCreateWorkspaceOpen: boolean;
   isInviteMemberOpen: boolean;
@@ -33,6 +35,8 @@ const initialState: UIState = {
   mobileNavOpen: false,
   isCreateTaskOpen: false,
   createTaskDefaultStatus: undefined,
+  isEditTaskOpen: false,
+  editingTaskId: null,
   isCreateProjectOpen: false,
   isCreateWorkspaceOpen: false,
   isInviteMemberOpen: false,
@@ -79,6 +83,13 @@ export const uiSlice = createSlice({
     ) => {
       state.isCreateTaskOpen = action.payload.open;
       state.createTaskDefaultStatus = action.payload.defaultStatus;
+    },
+    setEditTaskOpen: (
+      state,
+      action: PayloadAction<{ open: boolean; taskId?: string | null }>
+    ) => {
+      state.isEditTaskOpen = action.payload.open;
+      state.editingTaskId = action.payload.taskId || null;
     },
     setCreateProjectOpen: (state, action: PayloadAction<boolean>) => {
       state.isCreateProjectOpen = action.payload;
@@ -129,6 +140,7 @@ export const {
   setSidebarCollapsed,
   setMobileNavOpen,
   setCreateTaskOpen,
+  setEditTaskOpen,
   setCreateProjectOpen,
   setCreateWorkspaceOpen,
   setInviteMemberOpen,

@@ -14,7 +14,7 @@ import {
   bulkUpdatePriority,
   bulkDeleteTasks,
 } from '@/store/slices/taskSlice';
-import { openTaskDetail } from '@/store/slices/uiSlice';
+import { openTaskDetail, setEditTaskOpen } from '@/store/slices/uiSlice';
 import { logActivity } from '@/store/slices/activitySlice';
 import { addNotification } from '@/store/slices/notificationSlice';
 import { Task, TaskPriority, TaskStatus } from '@/types/task';
@@ -323,8 +323,8 @@ export function ListView({ filteredTasks }: ListViewProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="h-7 w-7 text-[#9C9FA6] hover:text-[#B66DFF] hover:bg-[#B66DFF]/10"
-              onClick={() => dispatch(openTaskDetail(task.id))}
+              className="h-7 w-7 text-[#7D8592] hover:text-[#5D5FEF] hover:bg-[#ECEBFF] dark:hover:bg-[#1A1A1A] rounded-lg"
+              onClick={() => dispatch(setEditTaskOpen({ open: true, taskId: task.id }))}
               title="Edit Task"
             >
               <Pencil className="w-3.5 h-3.5" />

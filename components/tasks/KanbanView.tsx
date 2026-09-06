@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { useAppDispatch, useAppSelector } from '@/store';
 import { moveTaskStatus, restoreTask, deleteTask } from '@/store/slices/taskSlice';
-import { openTaskDetail, setCreateTaskOpen } from '@/store/slices/uiSlice';
+import { openTaskDetail, setCreateTaskOpen, setEditTaskOpen } from '@/store/slices/uiSlice';
 import { logActivity } from '@/store/slices/activitySlice';
 import { Task, TaskPriority, TaskStatus } from '@/types/task';
 import { canEditTask, canCreateTask } from '@/lib/permissions';
@@ -22,6 +22,7 @@ import {
   Clock,
   Layers,
   Sparkles,
+  Pencil,
 } from 'lucide-react';
 
 const COLUMNS: {
@@ -209,27 +210,44 @@ export function KanbanView({ filteredTasks }: KanbanViewProps) {
                       draggedTaskId === task.id ? 'opacity-40 scale-95' : ''
                     }`}
                   >
-                    {/* Top row: Key & Priority */}
+                    {/* Top row: Key, Priority & Edit */}
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-[10px] font-mono font-bold text-[#7D8592] dark:text-[#888888] group-hover:text-[#5D5FEF] transition-colors">
                         {project?.key || 'TASK'}-{task.taskNumber}
                       </span>
 
-                      <Badge
-                        variant={
-                          task.priority === 'URGENT'
-                            ? 'destructive'
-                            : task.priority === 'HIGH'
-                            ? 'warning'
-                            : task.priority === 'MEDIUM'
-                            ? 'default'
-                            : 'secondary'
-                        }
-                        className="text-[10px] px-1.5 py-0 font-semibold"
-                      >
-                        {task.priority === 'URGENT' && <Flame className="w-2.5 h-2.5 mr-0.5 inline text-white" />}
-                        {task.priority}
-                      </Badge>
+                      <div className="flex items-center gap-1">
+                        <Badge
+                          variant={
+                            task.priority === 'URGENT'
+                              ? 'destructive'
+                              : task.priority === 'HIGH'
+                              ? 'warning'
+                              : task.priority === 'MEDIUM'
+                              ? 'default'
+                              : 'secondary'
+                          }
+                          className="text-[10px] px-1.5 py-0 font-semibold"
+                        >
+                          {task.priority === 'URGENT' && <Flame className="w-2.5 h-2.5 mr-0.5 inline text-white" />}
+                          {task.priority}
+                        </Badge>
+
+                        {taskCanEdit && (
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-5 w-5 text-[#7D8592] hover:text-[#5D5FEF] hover:bg-[#ECEBFF] dark:hover:bg-[#1A1A1A] rounded opacity-0 group-hover:opacity-100 transition-opacity"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              dispatch(setEditTaskOpen({ open: true, taskId: task.id }));
+                            }}
+                            title="Edit Task"
+                          >
+                            <Pencil className="w-3 h-3" />
+                          </Button>
+                        )}
+                      </div>
                     </div>
 
                     {/* Title */}

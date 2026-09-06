@@ -34,9 +34,10 @@ export function CreateTaskDialog() {
   const mockUsers = useAppSelector((state) => state.auth.mockUsers);
   const activeWorkspaceId = useAppSelector((state) => state.workspace.activeWorkspaceId);
   const activeProjectId = useAppSelector((state) => state.project.activeProjectId);
-  const projects = useAppSelector((state) =>
-    state.project.projects.filter((p) => p.workspaceId === activeWorkspaceId && p.status === 'active')
-  );
+  const allProjects = useAppSelector((state) => state.project.projects);
+  const projects = React.useMemo(() => {
+    return allProjects.filter((p) => p.workspaceId === activeWorkspaceId && p.status === 'active');
+  }, [allProjects, activeWorkspaceId]);
 
   const [labels, setLabels] = React.useState<string[]>(['Frontend']);
   const [customLabelInput, setCustomLabelInput] = React.useState('');

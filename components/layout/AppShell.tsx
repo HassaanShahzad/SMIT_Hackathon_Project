@@ -5,6 +5,7 @@ import { Sidebar } from './Sidebar';
 import { Navbar } from './Navbar';
 import { TaskDetailSheet } from '@/components/tasks/TaskDetailSheet';
 import { CreateTaskDialog } from '@/components/forms/CreateTaskDialog';
+import { EditTaskDialog } from '@/components/forms/EditTaskDialog';
 import { CreateProjectDialog } from '@/components/forms/CreateProjectDialog';
 import { CreateWorkspaceDialog } from '@/components/forms/CreateWorkspaceDialog';
 import { SettingsModal } from '@/components/settings/SettingsModal';
@@ -46,6 +47,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {/* Global Modals & Drawers */}
       <TaskDetailSheet />
       <CreateTaskDialog />
+      <EditTaskDialog />
       <CreateProjectDialog />
       <CreateWorkspaceDialog />
       <SettingsModal />

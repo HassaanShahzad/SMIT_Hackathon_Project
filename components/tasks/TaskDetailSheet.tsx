@@ -42,7 +42,7 @@ import {
   convertTaskToSubtask,
 } from '@/store/slices/subtaskSlice';
 import { addComment, deleteComment } from '@/store/slices/commentSlice';
-import { closeTaskDetail, openTaskDetail } from '@/store/slices/uiSlice';
+import { closeTaskDetail, openTaskDetail, setEditTaskOpen } from '@/store/slices/uiSlice';
 import { logActivity } from '@/store/slices/activitySlice';
 import { addNotification } from '@/store/slices/notificationSlice';
 import { canEditTask, canDeleteTask } from '@/lib/permissions';
@@ -67,6 +67,7 @@ import {
   CornerDownRight,
   ChevronRight,
   ChevronDown,
+  Pencil,
 } from 'lucide-react';
 
 export function TaskDetailSheet() {
@@ -78,13 +79,11 @@ export function TaskDetailSheet() {
   const tasks = useAppSelector((state) => state.task.tasks);
   const projects = useAppSelector((state) => state.project.projects);
   const allSubtasks = useAppSelector((state) => state.subtask.subtasks);
-  const subtasks = allSubtasks.filter((s) => s.taskId === activeTaskId);
-  const comments = useAppSelector((state) =>
-    state.comment.comments.filter((c) => c.taskId === activeTaskId)
-  );
-  const activities = useAppSelector((state) =>
-    state.activity.activities.filter((a) => a.taskId === activeTaskId)
-  );
+  const subtasks = React.useMemo(() => allSubtasks.filter((s) => s.taskId === activeTaskId), [allSubtasks, activeTaskId]);
+  const allComments = useAppSelector((state) => state.comment.comments);
+  const comments = React.useMemo(() => allComments.filter((c) => c.taskId === activeTaskId), [allComments, activeTaskId]);
+  const allActivities = useAppSelector((state) => state.activity.activities);
+  const activities = React.useMemo(() => allActivities.filter((a) => a.taskId === activeTaskId), [allActivities, activeTaskId]);
 
   const task = tasks.find((t) => t.id === activeTaskId);
   const project = projects.find((p) => p.id === task?.projectId);
@@ -398,6 +397,17 @@ export function TaskDetailSheet() {
             </div>
 
             <div className="flex items-center space-x-1.5 mr-6">
+              {userCanEdit && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="h-7 text-xs bg-[#5D5FEF] text-white hover:bg-[#4E50E6] hover:text-white dark:bg-white dark:text-black dark:hover:bg-slate-200 font-semibold border-none shadow-xs"
+                  onClick={() => dispatch(setEditTaskOpen({ open: true, taskId: task.id }))}
+                  title="Edit full task details"
+                >
+                  <Pencil className="w-3.5 h-3.5 mr-1" /> Edit Task
+                </Button>
+              )}
               {userCanEdit && (
                 <Button
                   variant="ghost"
