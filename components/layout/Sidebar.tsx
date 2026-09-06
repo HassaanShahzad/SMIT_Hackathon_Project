@@ -135,9 +135,9 @@ export function Sidebar({ isMobileDrawer = false }: SidebarProps) {
   };
 
   return (
-    <aside className="w-64 h-full flex flex-col bg-white dark:bg-[#0A0A0A] border-r border-[#F0F1F5] dark:border-[#222222] select-none transition-colors">
+    <aside className="w-64 h-full flex flex-col bg-white dark:bg-[#0A0A0A] border-r border-[#E5E7EB] dark:border-[#222222] select-none transition-colors">
       {/* Top Header: Brand Logo & Workspace Switcher */}
-      <div className="p-4 border-b border-[#F0F1F5] dark:border-[#222222] flex flex-col gap-3">
+      <div className="p-4 border-b border-[#E5E7EB] dark:border-[#222222] flex flex-col gap-3">
         {/* Brand Logo */}
         <div className="flex items-center gap-2.5 px-1">
           <div className="w-8 h-8 rounded-xl bg-[#5D5FEF] flex items-center justify-center text-white shadow-md shadow-indigo-500/20">
@@ -156,7 +156,7 @@ export function Sidebar({ isMobileDrawer = false }: SidebarProps) {
         {/* Workspace Dropdown */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <button className="w-full flex items-center justify-between p-2 rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB]/60 dark:bg-[#111111]/60 hover:bg-[#ECEBFF]/40 dark:hover:bg-[#1A1A1A] transition-colors text-left">
+            <button className="w-full flex items-center justify-between p-2 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB]/60 dark:bg-[#111111]/60 hover:bg-[#ECEBFF]/40 dark:hover:bg-[#1A1A1A] transition-colors text-left">
               <div className="flex items-center gap-2 min-w-0">
                 <div className="w-6 h-6 rounded-lg bg-[#ECEBFF] dark:bg-[#1A1A1A] text-[#5D5FEF] dark:text-indigo-400 flex items-center justify-center shrink-0">
                   <Layers className="w-3.5 h-3.5" />
@@ -170,7 +170,7 @@ export function Sidebar({ isMobileDrawer = false }: SidebarProps) {
               <ChevronsUpDown className="w-3.5 h-3.5 text-[#7D8592] shrink-0" />
             </button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56 shadow-xl border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
+          <DropdownMenuContent className="w-56 shadow-xl border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
             <DropdownMenuLabel className="text-xs font-semibold text-[#7D8592] dark:text-[#888888]">
               Workspaces
             </DropdownMenuLabel>
@@ -188,7 +188,7 @@ export function Sidebar({ isMobileDrawer = false }: SidebarProps) {
             ))}
             {canCreateWorkspace(currentUser?.role) && (
               <>
-                <DropdownMenuSeparator className="bg-[#F0F1F5] dark:bg-[#222222]" />
+                <DropdownMenuSeparator className="bg-[#E5E7EB] dark:bg-[#222222]" />
                 <DropdownMenuItem
                   onClick={() => dispatch(setCreateWorkspaceOpen(true))}
                   className="text-xs text-[#5D5FEF] font-medium cursor-pointer"
@@ -369,7 +369,7 @@ export function Sidebar({ isMobileDrawer = false }: SidebarProps) {
       </div>
 
       {/* Bottom User Profile Section */}
-      <div className="p-3 border-t border-[#F0F1F5] dark:border-[#222222] flex items-center justify-between bg-white dark:bg-[#0A0A0A]">
+      <div className="p-3 border-t border-[#E5E7EB] dark:border-[#222222] flex items-center justify-between bg-white dark:bg-[#0A0A0A]">
         <button
           onClick={() => dispatch(setAuthModalOpen({ open: true, mode: 'profile' }))}
           className="flex items-center gap-2.5 min-w-0 flex-1 p-1 rounded-xl hover:bg-[#F6F7FB] dark:hover:bg-[#111111] transition-colors text-left"
@@ -384,7 +384,7 @@ export function Sidebar({ isMobileDrawer = false }: SidebarProps) {
             {/* Active Presence Dot */}
             <span
               title="Active"
-              className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#00D2B4] ring-2 ring-white dark:ring-[#0A0A0A]"
+              className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#00D2B4]"
             />
           </div>
           <div className="min-w-0 flex-1">

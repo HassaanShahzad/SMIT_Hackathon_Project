@@ -196,7 +196,7 @@ export function CreateProjectDialog() {
                     className={`p-2.5 rounded-xl border text-left cursor-pointer transition-all ${
                       isSelected
                         ? 'border-[#5D5FEF] bg-[#ECEBFF] text-[#1A1D26] dark:bg-[#1A1A1A] dark:text-white font-semibold'
-                        : 'border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-[#7D8592] dark:text-[#888888] hover:text-[#1A1D26] dark:hover:text-white'
+                        : 'border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-[#7D8592] dark:text-[#888888] hover:text-[#1A1D26] dark:hover:text-white'
                     }`}
                   >
                     <div className="flex items-center space-x-2 font-medium text-xs mb-1">
@@ -220,7 +220,7 @@ export function CreateProjectDialog() {
                   onClick={() => setValue('color', c.value)}
                   className={`w-7 h-7 rounded-full ${c.bg} flex items-center justify-center transition-all ${
                     selectedColor === c.value
-                      ? 'ring-2 ring-white ring-offset-2 ring-offset-slate-900 scale-110'
+                      ? 'ring-2 ring-[#5D5FEF] scale-110'
                       : 'opacity-70 hover:opacity-100'
                   }`}
                   title={c.label}

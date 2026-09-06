@@ -119,7 +119,7 @@ export function TaskFilterBar() {
   };
 
   return (
-    <div className="bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] rounded-2xl p-3 sm:p-4 shadow-sm space-y-3 transition-colors">
+    <div className="bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] rounded-2xl p-3 sm:p-4 shadow-sm space-y-3 transition-colors">
       {/* Top Row: Search + Quick Filter Controls + Sort + Clear */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         {/* Search Input */}
@@ -129,7 +129,7 @@ export function TaskFilterBar() {
             value={filter.searchQuery}
             onChange={(e) => dispatch(setSearchQuery(e.target.value))}
             placeholder="Search tasks by title, description, or label..."
-            className="pl-9 pr-8 h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+            className="pl-9 pr-8 h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
           />
           {filter.searchQuery && (
             <button
@@ -149,7 +149,7 @@ export function TaskFilterBar() {
               <Button
                 variant="outline"
                 size="sm"
-                className={`h-8 text-xs rounded-xl border-[#F0F1F5] dark:border-[#222222] gap-1.5 ${
+                className={`h-8 text-xs rounded-xl border-[#E5E7EB] dark:border-[#222222] gap-1.5 ${
                   filter.selectedStatuses.length > 0
                     ? 'border-[#5D5FEF] bg-[#ECEBFF] text-[#5D5FEF] dark:bg-[#1A1A1A] dark:text-white font-semibold'
                     : 'text-[#1A1D26] dark:text-slate-300'
@@ -167,7 +167,7 @@ export function TaskFilterBar() {
                 <ChevronDown className="w-3 h-3 text-[#7D8592]" />
               </Button>
             </PopoverTrigger>
-            <PopoverContent align="start" className="w-48 p-2 shadow-xl border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
+            <PopoverContent align="start" className="w-48 p-2 shadow-xl border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
               <p className="text-[11px] font-bold text-[#7D8592] dark:text-[#888888] px-2 py-1 uppercase tracking-wider">
                 Filter by Status
               </p>
@@ -200,7 +200,7 @@ export function TaskFilterBar() {
               <Button
                 variant="outline"
                 size="sm"
-                className={`h-8 text-xs rounded-xl border-[#F0F1F5] dark:border-[#222222] gap-1.5 ${
+                className={`h-8 text-xs rounded-xl border-[#E5E7EB] dark:border-[#222222] gap-1.5 ${
                   filter.selectedPriorities.length > 0
                     ? 'border-[#FF754C] bg-[#FFEBF3] text-[#FF754C] dark:bg-[#1A1A1A] dark:text-[#FF754C] font-semibold'
                     : 'text-[#1A1D26] dark:text-slate-300'
@@ -218,7 +218,7 @@ export function TaskFilterBar() {
                 <ChevronDown className="w-3 h-3 text-[#7D8592]" />
               </Button>
             </PopoverTrigger>
-            <PopoverContent align="start" className="w-48 p-2 shadow-xl border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
+            <PopoverContent align="start" className="w-48 p-2 shadow-xl border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
               <p className="text-[11px] font-bold text-[#7D8592] dark:text-[#888888] px-2 py-1 uppercase tracking-wider">
                 Filter by Priority
               </p>
@@ -251,7 +251,7 @@ export function TaskFilterBar() {
               <Button
                 variant="outline"
                 size="sm"
-                className={`h-8 text-xs rounded-xl border-[#F0F1F5] dark:border-[#222222] gap-1.5 ${
+                className={`h-8 text-xs rounded-xl border-[#E5E7EB] dark:border-[#222222] gap-1.5 ${
                   filter.selectedAssigneeId
                     ? 'border-[#0098DA] bg-[#E3F7FF] text-[#0098DA] dark:bg-[#1A1A1A] dark:text-[#00D2B4] font-semibold'
                     : 'text-[#1A1D26] dark:text-slate-300'
@@ -266,7 +266,7 @@ export function TaskFilterBar() {
                 <ChevronDown className="w-3 h-3 text-[#7D8592]" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-52 shadow-xl border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
+            <DropdownMenuContent align="start" className="w-52 shadow-xl border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
               <DropdownMenuLabel className="text-xs text-[#7D8592] dark:text-[#888888]">
                 Filter by Assignee
               </DropdownMenuLabel>
@@ -279,7 +279,7 @@ export function TaskFilterBar() {
                   <Check className="w-3.5 h-3.5 ml-auto text-[#0098DA]" />
                 )}
               </DropdownMenuItem>
-              <DropdownMenuSeparator className="bg-[#F0F1F5] dark:bg-[#222222]" />
+              <DropdownMenuSeparator className="bg-[#E5E7EB] dark:bg-[#222222]" />
               {mockUsers.map((u) => (
                 <DropdownMenuItem
                   key={u.id}
@@ -304,7 +304,7 @@ export function TaskFilterBar() {
               <Button
                 variant="outline"
                 size="sm"
-                className={`h-8 text-xs rounded-xl border-[#F0F1F5] dark:border-[#222222] gap-1.5 ${
+                className={`h-8 text-xs rounded-xl border-[#E5E7EB] dark:border-[#222222] gap-1.5 ${
                   filter.dueDateFilter !== 'all'
                     ? 'border-[#FFB74D] bg-[#FFF8E1] text-[#F57C00] dark:bg-[#1A1A1A] dark:text-[#FFB74D] font-semibold'
                     : 'text-[#1A1D26] dark:text-slate-300'
@@ -317,7 +317,7 @@ export function TaskFilterBar() {
                 <ChevronDown className="w-3 h-3 text-[#7D8592]" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-48 shadow-xl border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
+            <DropdownMenuContent align="start" className="w-48 shadow-xl border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
               <DropdownMenuLabel className="text-xs text-[#7D8592] dark:text-[#888888]">
                 Filter by Due Date
               </DropdownMenuLabel>
@@ -342,7 +342,7 @@ export function TaskFilterBar() {
               variant={filter.onlyMyTasks ? 'secondary' : 'outline'}
               size="sm"
               onClick={() => dispatch(setOnlyMyTasks(!filter.onlyMyTasks))}
-              className={`h-8 text-xs rounded-xl border-[#F0F1F5] dark:border-[#222222] gap-1.5 ${
+              className={`h-8 text-xs rounded-xl border-[#E5E7EB] dark:border-[#222222] gap-1.5 ${
                 filter.onlyMyTasks
                   ? 'bg-[#5D5FEF] text-white dark:bg-white dark:text-black border-transparent shadow-sm'
                   : 'text-[#1A1D26] dark:text-slate-300'
@@ -358,7 +358,7 @@ export function TaskFilterBar() {
               <Button
                 variant="outline"
                 size="sm"
-                className="h-8 text-xs rounded-xl border-[#F0F1F5] dark:border-[#222222] gap-1.5 text-[#1A1D26] dark:text-slate-300"
+                className="h-8 text-xs rounded-xl border-[#E5E7EB] dark:border-[#222222] gap-1.5 text-[#1A1D26] dark:text-slate-300"
               >
                 <ArrowUpDown className="w-3.5 h-3.5 text-[#7D8592]" />
                 <span>
@@ -367,7 +367,7 @@ export function TaskFilterBar() {
                 <ChevronDown className="w-3 h-3 text-[#7D8592]" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-48 shadow-xl border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
+            <DropdownMenuContent align="end" className="w-48 shadow-xl border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
               <DropdownMenuLabel className="text-xs text-[#7D8592] dark:text-[#888888]">
                 Sort Tasks
               </DropdownMenuLabel>
@@ -404,7 +404,7 @@ export function TaskFilterBar() {
       </div>
 
       {/* Bottom Row: Presets Ribbon */}
-      <div className="pt-2 border-t border-[#F0F1F5] dark:border-[#222222] flex flex-wrap items-center justify-between gap-2 text-xs">
+      <div className="pt-2 border-t border-[#E5E7EB] dark:border-[#222222] flex flex-wrap items-center justify-between gap-2 text-xs">
         <div className="flex flex-wrap items-center gap-1.5">
           <span className="text-[11px] font-bold text-[#7D8592] dark:text-[#888888] flex items-center gap-1 mr-1">
             <Bookmark className="w-3 h-3" /> Presets:
@@ -412,7 +412,7 @@ export function TaskFilterBar() {
           {filter.savedPresets.map((preset) => (
             <div
               key={preset.id}
-              className="inline-flex items-center rounded-lg bg-[#F6F7FB] dark:bg-[#111111] border border-[#F0F1F5] dark:border-[#222222] overflow-hidden"
+              className="inline-flex items-center rounded-lg bg-[#F6F7FB] dark:bg-[#111111] border border-[#E5E7EB] dark:border-[#222222] overflow-hidden"
             >
               <button
                 onClick={() => dispatch(applyPreset(preset))}
@@ -423,7 +423,7 @@ export function TaskFilterBar() {
               {preset.id.startsWith('preset_custom_') && (
                 <button
                   onClick={() => dispatch(deletePreset(preset.id))}
-                  className="px-1.5 py-1 text-[#7D8592] hover:text-rose-500 transition-colors border-l border-[#F0F1F5] dark:border-[#222222]"
+                  className="px-1.5 py-1 text-[#7D8592] hover:text-rose-500 transition-colors border-l border-[#E5E7EB] dark:border-[#222222]"
                 >
                   <Trash2 className="w-2.5 h-2.5" />
                 </button>
@@ -439,7 +439,7 @@ export function TaskFilterBar() {
               value={presetNameInput}
               onChange={(e) => setPresetNameInput(e.target.value)}
               placeholder="Preset name..."
-              className="h-7 text-xs w-36 rounded-lg bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222]"
+              className="h-7 text-xs w-36 rounded-lg bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222]"
               autoFocus
             />
             <Button

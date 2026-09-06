@@ -245,9 +245,9 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
         </div>
 
         {/* Authentication Card */}
-        <div className="bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] rounded-3xl shadow-xl p-6 sm:p-8">
+        <div className="bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] rounded-3xl shadow-xl p-6 sm:p-8">
           {/* Tab Navigation */}
-          <div className="flex bg-[#F6F7FB] dark:bg-[#111111] p-1 rounded-2xl mb-6 border border-[#F0F1F5] dark:border-[#222222]">
+          <div className="flex bg-[#F6F7FB] dark:bg-[#111111] p-1 rounded-2xl mb-6 border border-[#E5E7EB] dark:border-[#222222]">
             <button
               onClick={() => {
                 setActiveTab('login');
@@ -294,7 +294,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                   type="email"
                   {...loginForm.register('email', { required: true })}
                   placeholder="name@company.com"
-                  className="h-10 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+                  className="h-10 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
                 />
               </div>
 
@@ -315,7 +315,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                   type="password"
                   {...loginForm.register('password', { required: true })}
                   placeholder="••••••••"
-                  className="h-10 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+                  className="h-10 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
                 />
               </div>
 
@@ -332,7 +332,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
           {activeTab === 'signup' && (
             <form onSubmit={signupForm.handleSubmit(handleSignupSubmit)} className="space-y-3.5">
               {/* Profile Image / Gallery Upload */}
-              <div className="flex items-center gap-4 p-3 rounded-2xl bg-[#F6F7FB] dark:bg-[#111111] border border-[#F0F1F5] dark:border-[#222222]">
+              <div className="flex items-center gap-4 p-3 rounded-2xl bg-[#F6F7FB] dark:bg-[#111111] border border-[#E5E7EB] dark:border-[#222222]">
                 <Avatar className="w-14 h-14 ring-2 ring-[#5D5FEF] shrink-0">
                   <AvatarImage src={avatarPreview || undefined} />
                   <AvatarFallback className="bg-[#5D5FEF] text-white font-bold text-sm">
@@ -361,7 +361,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                       variant="outline"
                       size="sm"
                       onClick={() => fileInputRef.current?.click()}
-                      className="h-7 text-[11px] px-2.5 rounded-lg border-[#F0F1F5] dark:border-[#222222]"
+                      className="h-7 text-[11px] px-2.5 rounded-lg border-[#E5E7EB] dark:border-[#222222]"
                     >
                       <Upload className="w-3 h-3 mr-1" /> Choose File
                     </Button>
@@ -387,7 +387,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                 <Input
                   {...signupForm.register('name', { required: true })}
                   placeholder="Enter Name"
-                  className="h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+                  className="h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
                 />
               </div>
 
@@ -399,7 +399,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                   type="email"
                   {...signupForm.register('email', { required: true })}
                   placeholder="abc@gmail.com"
-                  className="h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+                  className="h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
                 />
               </div>
 
@@ -412,7 +412,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                     type="password"
                     {...signupForm.register('password', { required: true })}
                     placeholder="••••••••"
-                    className="h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+                    className="h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
                   />
                 </div>
                 <div>
@@ -423,7 +423,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                     type="password"
                     {...signupForm.register('confirmPassword', { required: true })}
                     placeholder="••••••••"
-                    className="h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+                    className="h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
                   />
                 </div>
               </div>
@@ -435,7 +435,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                 <Input
                   {...signupForm.register('department')}
                   placeholder="e.g. Product Engineering, Marketing"
-                  className="h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+                  className="h-9 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
                 />
               </div>
 
@@ -464,7 +464,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                   type="email"
                   {...forgotForm.register('email', { required: true })}
                   placeholder="name@company.com"
-                  className="h-10 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+                  className="h-10 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
                 />
               </div>
 
@@ -476,7 +476,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                   type="password"
                   {...forgotForm.register('newPassword', { required: true })}
                   placeholder="••••••••"
-                  className="h-10 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+                  className="h-10 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
                 />
               </div>
 
@@ -488,7 +488,7 @@ export function AuthScreen({ initialTab = 'login' }: AuthScreenProps) {
                   type="password"
                   {...forgotForm.register('confirmNewPassword', { required: true })}
                   placeholder="••••••••"
-                  className="h-10 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
+                  className="h-10 text-xs rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] focus-visible:ring-[#5D5FEF]"
                 />
               </div>
 

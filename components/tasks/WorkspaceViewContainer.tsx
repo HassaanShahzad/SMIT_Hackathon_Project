@@ -159,7 +159,7 @@ export function WorkspaceViewContainer({ currentView }: WorkspaceViewContainerPr
   return (
     <div className="space-y-5">
       {/* Workspace & Project Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-[#EBEDF2] dark:border-slate-800/80">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-[#E5E7EB] dark:border-[#222222]">
         <div>
           <div className="flex items-center space-x-2 mb-1">
             <span className="text-xs font-bold uppercase tracking-wider text-[#B66DFF] font-mono">
@@ -209,7 +209,7 @@ export function WorkspaceViewContainer({ currentView }: WorkspaceViewContainerPr
             variant="outline"
             size="sm"
             onClick={() => dispatch(setSettingsOpen(true))}
-            className="h-8 text-xs border-[#EBEDF2] dark:border-slate-800 text-[#343A40] dark:text-slate-300"
+            className="h-8 text-xs border-[#E5E7EB] dark:border-[#222222] text-[#343A40] dark:text-slate-300"
           >
             <Settings className="w-3.5 h-3.5 mr-1 text-[#9C9FA6]" /> Settings
           </Button>
@@ -226,7 +226,7 @@ export function WorkspaceViewContainer({ currentView }: WorkspaceViewContainerPr
 
       {/* Global Empty Workspace Prompt */}
       {filteredTasks.length === 0 && tasks.filter((t) => t.workspaceId === currentWorkspaceId).length === 0 && (
-        <div className="flex flex-col items-center justify-center p-12 border border-dashed border-[#EBEDF2] dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900/20 text-center shadow-xs">
+        <div className="flex flex-col items-center justify-center p-12 border border-dashed border-[#E5E7EB] dark:border-[#222222] rounded-2xl bg-white dark:bg-[#0A0A0A] text-center shadow-xs">
           <Inbox className="w-10 h-10 text-[#9C9FA6] mb-3" />
           <h3 className="text-base font-bold text-[#343A40] dark:text-slate-200">No tasks in this workspace yet</h3>
           <p className="text-xs text-[#9C9FA6] max-w-sm mt-1 mb-4">
@@ -245,7 +245,7 @@ export function WorkspaceViewContainer({ currentView }: WorkspaceViewContainerPr
             <Button
               variant="outline"
               size="sm"
-              className="border-[#EBEDF2] text-[#343A40]"
+              className="border-[#E5E7EB] dark:border-[#222222] text-[#343A40] dark:text-slate-300"
               onClick={() => dispatch(setCreateProjectOpen(true))}
             >
               Create Project

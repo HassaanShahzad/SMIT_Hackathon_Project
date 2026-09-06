@@ -200,20 +200,20 @@ export function SettingsModal() {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => dispatch(setSettingsOpen(open))}>
-      <DialogContent className="sm:max-w-2xl max-h-[85vh] overflow-y-auto bg-white dark:bg-[#0B0F17] border-slate-200 dark:border-slate-800">
+      <DialogContent className="sm:max-w-2xl max-h-[85vh] overflow-y-auto bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222]">
         <DialogHeader>
-          <DialogTitle className="flex items-center space-x-2 text-slate-900 dark:text-slate-100">
-            <Settings className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+          <DialogTitle className="flex items-center space-x-2 text-[#1A1D26] dark:text-[#EDEDED]">
+            <Settings className="w-5 h-5 text-[#5D5FEF]" />
             <span>Workspace Settings & Preferences</span>
           </DialogTitle>
-          <DialogDescription className="text-slate-600 dark:text-slate-400">
+          <DialogDescription className="text-[#7D8592] dark:text-[#888888]">
             Configure workspace parameters, manage team roles, simulation settings, and backups.
           </DialogDescription>
         </DialogHeader>
 
         {/* Workspace Selector Bar */}
-        <div className="flex items-center justify-between p-3 rounded-xl bg-purple-50 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800/60 my-1">
-          <div className="text-xs font-semibold text-purple-900 dark:text-purple-300">
+        <div className="flex items-center justify-between p-3 rounded-xl bg-[#F6F7FB] dark:bg-[#111111] border border-[#E5E7EB] dark:border-[#222222] my-1">
+          <div className="text-xs font-semibold text-[#1A1D26] dark:text-[#EDEDED]">
             Configure Workspace:
           </div>
           <Select
@@ -223,7 +223,7 @@ export function SettingsModal() {
               dispatch(setActiveWorkspace(val));
             }}
           >
-            <SelectTrigger className="w-56 h-8 text-xs bg-white dark:bg-slate-900 border-purple-300 dark:border-purple-700">
+            <SelectTrigger className="w-56 h-8 text-xs bg-white dark:bg-[#0A0A0A] border-[#E5E7EB] dark:border-[#222222]">
               <SelectValue placeholder="Select Workspace" />
             </SelectTrigger>
             <SelectContent>
@@ -291,7 +291,7 @@ export function SettingsModal() {
                         className={`flex items-center justify-center space-x-2 p-2.5 rounded-xl border transition-all outline-none focus:outline-none focus:ring-0 ${
                           isSelected
                             ? 'border-[#5D5FEF] bg-[#ECEBFF] text-[#5D5FEF] dark:bg-[#1A1A1A] dark:text-white dark:border-[#5D5FEF] font-semibold shadow-sm'
-                            : 'border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-[#7D8592] dark:text-[#888888] hover:text-[#1A1D26] dark:hover:text-white'
+                            : 'border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-[#7D8592] dark:text-[#888888] hover:text-[#1A1D26] dark:hover:text-white'
                         }`}
                       >
                         <IconComp className="w-4 h-4" />
@@ -302,10 +302,10 @@ export function SettingsModal() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
+              <div className="flex items-center justify-between p-3 rounded-lg border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111]">
                 <div>
-                  <div className="text-sm font-medium text-slate-800 dark:text-slate-200">Compact Density View</div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400">Reduce spacing for high-density information display</div>
+                  <div className="text-sm font-medium text-[#1A1D26] dark:text-[#EDEDED]">Compact Density View</div>
+                  <div className="text-xs text-[#7D8592] dark:text-[#888888]">Reduce spacing for high-density information display</div>
                 </div>
                 <Switch
                   checked={settings.compactMode}
@@ -313,8 +313,8 @@ export function SettingsModal() {
                 />
               </div>
 
-              <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800">
-                <label className="text-xs font-medium text-slate-700 dark:text-slate-300">Notification Alerts</label>
+              <div className="space-y-2 pt-2 border-t border-[#E5E7EB] dark:border-[#222222]">
+                <label className="text-xs font-medium text-[#1A1D26] dark:text-[#EDEDED]">Notification Alerts</label>
                 <div className="space-y-2">
                   {[
                     { key: 'taskAssigned', label: 'Task Assignment Notifications' },
@@ -322,7 +322,7 @@ export function SettingsModal() {
                     { key: 'dueDateReminders', label: 'Due Date Approaching Reminders' },
                     { key: 'statusChanges', label: 'Task Lifecycle Status Changes' },
                   ].map((item) => (
-                    <div key={item.key} className="flex items-center justify-between text-xs text-slate-700 dark:text-slate-300">
+                    <div key={item.key} className="flex items-center justify-between text-xs text-[#7D8592] dark:text-[#888888]">
                       <span>{item.label}</span>
                       <Switch
                         checked={!!settings.notificationPreferences[item.key as keyof typeof settings.notificationPreferences]}
@@ -339,14 +339,14 @@ export function SettingsModal() {
             {/* 2. Team Tab */}
             <TabsContent value="team" className="space-y-4 py-3">
               {/* Add Member Box */}
-              <div className="p-3.5 rounded-xl border border-purple-200 dark:border-purple-800/60 bg-purple-50/50 dark:bg-purple-950/20 space-y-3">
-                <div className="flex items-center space-x-2 text-xs font-semibold text-purple-900 dark:text-purple-300">
-                  <UserPlus className="w-4 h-4 text-purple-600" />
+              <div className="p-3.5 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] space-y-3">
+                <div className="flex items-center space-x-2 text-xs font-semibold text-[#1A1D26] dark:text-[#EDEDED]">
+                  <UserPlus className="w-4 h-4 text-[#5D5FEF]" />
                   <span>Invite Teammate to Workspace</span>
                 </div>
                 <form onSubmit={handleInvite} className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   <Select value={inviteUserId} onValueChange={setInviteUserId}>
-                    <SelectTrigger className="text-xs bg-white dark:bg-slate-900">
+                    <SelectTrigger className="text-xs bg-white dark:bg-[#0A0A0A] border-[#E5E7EB] dark:border-[#222222]">
                       <SelectValue placeholder="Select user..." />
                     </SelectTrigger>
                     <SelectContent>
@@ -363,7 +363,7 @@ export function SettingsModal() {
                     value={inviteRole}
                     onValueChange={(val) => setInviteRole(val as 'Member' | 'Viewer')}
                   >
-                    <SelectTrigger className="text-xs bg-white dark:bg-slate-900">
+                    <SelectTrigger className="text-xs bg-white dark:bg-[#0A0A0A] border-[#E5E7EB] dark:border-[#222222]">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -376,7 +376,7 @@ export function SettingsModal() {
                     type="submit"
                     size="sm"
                     disabled={!inviteUserId}
-                    className="bg-purple-600 hover:bg-purple-700 text-white text-xs"
+                    className="bg-[#5D5FEF] hover:bg-[#5D5FEF]/90 text-white text-xs"
                   >
                     Send Invitation
                   </Button>
@@ -385,23 +385,23 @@ export function SettingsModal() {
 
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="text-sm font-medium text-slate-900 dark:text-slate-200">Current Members</h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Manage permissions and team access levels</p>
+                  <h4 className="text-sm font-medium text-[#1A1D26] dark:text-[#EDEDED]">Current Members</h4>
+                  <p className="text-xs text-[#7D8592] dark:text-[#888888]">Manage permissions and team access levels</p>
                 </div>
               </div>
 
-              <div className="divide-y divide-slate-200 dark:divide-slate-800 border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden">
+              <div className="divide-y divide-[#E5E7EB] dark:divide-[#222222] border border-[#E5E7EB] dark:border-[#222222] rounded-xl overflow-hidden">
                 {activeWorkspace?.members.map((member) => {
                   const user = mockUsers.find((u) => u.id === member.userId);
                   if (!user) return null;
                   const isOwner = activeWorkspace.ownerId === member.userId;
 
                   return (
-                    <div key={member.userId} className="flex items-center justify-between p-3 bg-white dark:bg-slate-900/40">
+                    <div key={member.userId} className="flex items-center justify-between p-3 bg-white dark:bg-[#0A0A0A]">
                       <div className="flex items-center space-x-3">
                         <UserAvatar name={user.name} avatarUrl={user.avatarUrl} size="default" />
                         <div>
-                          <div className="text-sm font-medium text-slate-900 dark:text-slate-200 flex items-center space-x-2">
+                          <div className="text-sm font-medium text-[#1A1D26] dark:text-[#EDEDED] flex items-center space-x-2">
                             <span>{user.name}</span>
                             {isOwner && (
                               <Badge variant="purple" className="text-[10px]">
@@ -409,7 +409,7 @@ export function SettingsModal() {
                               </Badge>
                             )}
                           </div>
-                          <div className="text-xs text-slate-500 dark:text-slate-400">{user.email}</div>
+                          <div className="text-xs text-[#7D8592] dark:text-[#888888]">{user.email}</div>
                         </div>
                       </div>
 
@@ -428,7 +428,7 @@ export function SettingsModal() {
                                 )
                               }
                             >
-                              <SelectTrigger className="h-7 w-28 text-xs bg-white dark:bg-slate-900">
+                              <SelectTrigger className="h-7 w-28 text-xs bg-white dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222]">
                                 <SelectValue />
                               </SelectTrigger>
                               <SelectContent>
@@ -442,7 +442,7 @@ export function SettingsModal() {
                             <Button
                               variant="ghost"
                               size="icon"
-                              className="h-7 w-7 text-slate-400 hover:text-rose-500"
+                              className="h-7 w-7 text-[#7D8592] hover:text-rose-500"
                               onClick={() =>
                                 dispatch(
                                   removeMember({
@@ -456,7 +456,7 @@ export function SettingsModal() {
                             </Button>
                           </>
                         ) : (
-                          <span className="text-xs text-slate-400 font-medium mr-2">Workspace Creator</span>
+                          <span className="text-xs text-[#7D8592] dark:text-[#888888] font-medium mr-2">Workspace Creator</span>
                         )}
                       </div>
                     </div>
@@ -467,17 +467,17 @@ export function SettingsModal() {
 
           {/* 3. Network & Simulation Tab */}
           <TabsContent value="network" className="space-y-4 py-3">
-            <div className="p-3 rounded-lg border border-indigo-500/20 bg-indigo-500/5 flex items-start space-x-3">
+            <div className="p-3.5 rounded-xl border border-indigo-500/20 bg-indigo-500/5 flex items-start space-x-3">
               <Wifi className="w-5 h-5 text-indigo-400 mt-0.5 shrink-0" />
-              <div className="text-xs text-slate-300 leading-relaxed">
+              <div className="text-xs text-[#1A1D26] dark:text-slate-300 leading-relaxed">
                 Because this application runs entirely client-side on <strong>localStorage</strong>, this tab lets you simulate real-world network latency and simulated rollback failures to test optimistic UI updates.
               </div>
             </div>
 
-            <div className="flex items-center justify-between p-3 rounded-lg border border-slate-800 bg-slate-900/40">
+            <div className="flex items-center justify-between p-3.5 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111]">
               <div>
-                <div className="text-sm font-medium text-slate-200">Simulate Network Latency</div>
-                <div className="text-xs text-slate-400">Introduces an asynchronous delay to actions</div>
+                <div className="text-sm font-medium text-[#1A1D26] dark:text-[#EDEDED]">Simulate Network Latency</div>
+                <div className="text-xs text-[#7D8592] dark:text-[#888888]">Introduces an asynchronous delay to actions</div>
               </div>
               <Switch
                 checked={settings.simulateNetworkDelay}
@@ -487,7 +487,7 @@ export function SettingsModal() {
 
             {settings.simulateNetworkDelay && (
               <div>
-                <label className="text-xs font-medium text-slate-300">
+                <label className="text-xs font-medium text-[#1A1D26] dark:text-[#EDEDED]">
                   Latency Delay: {settings.delayMs}ms
                 </label>
                 <input
@@ -502,11 +502,12 @@ export function SettingsModal() {
               </div>
             )}
 
-            <div className="pt-2 border-t border-slate-800">
-              <div className="text-xs font-medium text-slate-300 mb-2">Test Optimistic Rollback</div>
+            <div className="pt-2 border-t border-[#E5E7EB] dark:border-[#222222]">
+              <div className="text-xs font-medium text-[#1A1D26] dark:text-[#EDEDED] mb-2">Test Optimistic Rollback</div>
               <Button
                 variant="outline"
                 size="sm"
+                className="border-[#E5E7EB] dark:border-[#222222] text-[#1A1D26] dark:text-[#EDEDED]"
                 onClick={() => {
                   toast.promise(
                     new Promise((_, reject) => setTimeout(() => reject(new Error('Simulated network timeout')), 1000)),
@@ -526,28 +527,28 @@ export function SettingsModal() {
           {/* 4. Backup & Migration Tab */}
           <TabsContent value="backup" className="space-y-4 py-3">
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between">
+              <div className="p-4 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center space-x-2 text-sm font-medium text-slate-200 mb-1">
-                    <Download className="w-4 h-4 text-indigo-400" />
+                  <div className="flex items-center space-x-2 text-sm font-medium text-[#1A1D26] dark:text-[#EDEDED] mb-1">
+                    <Download className="w-4 h-4 text-[#5D5FEF]" />
                     <span>Export JSON Backup</span>
                   </div>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs text-[#7D8592] dark:text-[#888888] leading-relaxed">
                     Downloads an all-inclusive JSON snapshot of all workspaces, projects, tasks, subtasks, and comments.
                   </p>
                 </div>
-                <Button className="mt-4 w-full" onClick={handleExportData}>
+                <Button className="mt-4 w-full bg-[#5D5FEF] hover:bg-[#5D5FEF]/90 text-white" onClick={handleExportData}>
                   Export All Data
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between">
+              <div className="p-4 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center space-x-2 text-sm font-medium text-slate-200 mb-1">
-                    <Upload className="w-4 h-4 text-emerald-400" />
+                  <div className="flex items-center space-x-2 text-sm font-medium text-[#1A1D26] dark:text-[#EDEDED] mb-1">
+                    <Upload className="w-4 h-4 text-emerald-500" />
                     <span>Import JSON Backup</span>
                   </div>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs text-[#7D8592] dark:text-[#888888] leading-relaxed">
                     Restore application state from a previously exported backup file. Validates schemas automatically.
                   </p>
                 </div>
@@ -561,7 +562,7 @@ export function SettingsModal() {
                   />
                   <Button
                     variant="outline"
-                    className="mt-4 w-full"
+                    className="mt-4 w-full border-[#E5E7EB] dark:border-[#222222] text-[#1A1D26] dark:text-[#EDEDED]"
                     onClick={() => fileInputRef.current?.click()}
                   >
                     Select JSON File

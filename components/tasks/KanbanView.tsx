@@ -34,8 +34,8 @@ const COLUMNS: {
   {
     id: 'BACKLOG',
     title: 'Backlog',
-    color: 'border-slate-800',
-    badgeBg: 'bg-slate-800/60 text-slate-300',
+    color: 'border-[#E5E7EB] dark:border-[#222222]',
+    badgeBg: 'bg-[#F6F7FB] dark:bg-[#111111] text-[#7D8592] dark:text-[#888888]',
     dotColor: 'bg-slate-500',
   },
   {
@@ -159,17 +159,17 @@ export function KanbanView({ filteredTasks }: KanbanViewProps) {
             className={`flex flex-col rounded-2xl border bg-white dark:bg-[#0A0A0A] transition-all duration-200 min-h-[520px] shadow-sm ${
               isTarget
                 ? 'border-[#5D5FEF] bg-[#ECEBFF]/20 ring-2 ring-[#5D5FEF]/20'
-                : 'border-[#F0F1F5] dark:border-[#222222]'
+                : 'border-[#E5E7EB] dark:border-[#222222]'
             }`}
           >
             {/* Column Header */}
-            <div className="flex items-center justify-between p-3.5 border-b border-[#F0F1F5] dark:border-[#222222]">
+            <div className="flex items-center justify-between p-3.5 border-b border-[#E5E7EB] dark:border-[#222222]">
               <div className="flex items-center space-x-2">
                 <span className={`w-2.5 h-2.5 rounded-full ${column.dotColor}`} />
                 <h3 className="text-xs font-bold uppercase tracking-wider text-[#1A1D26] dark:text-white">
                   {column.title}
                 </h3>
-                <span className="rounded-full bg-[#F6F7FB] dark:bg-[#1A1A1A] px-2 py-0.5 text-[11px] font-mono text-[#7D8592] dark:text-[#888888] font-bold border border-[#F0F1F5] dark:border-[#222222]">
+                <span className="rounded-full bg-[#F6F7FB] dark:bg-[#1A1A1A] px-2 py-0.5 text-[11px] font-mono text-[#7D8592] dark:text-[#888888] font-bold border border-[#E5E7EB] dark:border-[#222222]">
                   {columnTasks.length}
                 </span>
               </div>
@@ -205,7 +205,7 @@ export function KanbanView({ filteredTasks }: KanbanViewProps) {
                     draggable={taskCanEdit}
                     onDragStart={(e) => handleDragStart(e, task.id)}
                     onClick={() => dispatch(openTaskDetail(task.id))}
-                    className={`group relative rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB]/60 dark:bg-[#111111] p-3.5 shadow-sm transition-all duration-150 hover:border-[#5D5FEF]/40 hover:shadow-md cursor-pointer select-none ${
+                    className={`group relative rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB]/60 dark:bg-[#111111] p-3.5 shadow-sm transition-all duration-150 hover:border-[#5D5FEF]/40 hover:shadow-md cursor-pointer select-none ${
                       draggedTaskId === task.id ? 'opacity-40 scale-95' : ''
                     }`}
                   >
@@ -257,7 +257,7 @@ export function KanbanView({ filteredTasks }: KanbanViewProps) {
                     )}
 
                     {/* Footer: Due date, Subtasks, Assignee */}
-                    <div className="flex items-center justify-between pt-2 border-t border-[#F0F1F5] dark:border-[#222222]">
+                    <div className="flex items-center justify-between pt-2 border-t border-[#E5E7EB] dark:border-[#222222]">
                       <div className="flex items-center space-x-2.5 text-[11px]">
                         {/* Due date */}
                         {task.dueDate && (
@@ -297,7 +297,7 @@ export function KanbanView({ filteredTasks }: KanbanViewProps) {
               })}
 
               {columnTasks.length === 0 && (
-                <div className="flex flex-col items-center justify-center py-12 px-4 text-center border border-dashed border-[#F0F1F5] dark:border-[#222222] rounded-xl bg-white/40 dark:bg-[#111111]/40">
+                <div className="flex flex-col items-center justify-center py-12 px-4 text-center border border-dashed border-[#E5E7EB] dark:border-[#222222] rounded-xl bg-white/40 dark:bg-[#111111]/40">
                   <p className="text-xs text-[#7D8592] dark:text-[#888888] font-medium">No tasks in {column.title}</p>
                   {userCanEdit && (
                     <button
@@ -315,7 +315,7 @@ export function KanbanView({ filteredTasks }: KanbanViewProps) {
 
             {/* Column Footer Quick Add */}
             {userCanEdit && (
-              <div className="p-2 border-t border-[#F0F1F5] dark:border-[#222222]">
+              <div className="p-2 border-t border-[#E5E7EB] dark:border-[#222222]">
                 <Button
                   variant="ghost"
                   size="sm"

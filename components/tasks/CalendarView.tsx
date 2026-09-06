@@ -97,12 +97,12 @@ export function CalendarView({ filteredTasks }: CalendarViewProps) {
   return (
     <div className="space-y-3 pb-8">
       {/* Navigation Header */}
-      <div className="flex items-center justify-between p-3 rounded-2xl border border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A] shadow-sm">
+      <div className="flex items-center justify-between p-3 rounded-2xl border border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A] shadow-sm">
         <div className="flex items-center space-x-3">
           <h3 className="text-base font-bold text-[#1A1D26] dark:text-white">
             {monthNames[month]} {year}
           </h3>
-          <Button variant="outline" size="sm" onClick={handleToday} className="h-7 text-xs border-[#F0F1F5] dark:border-[#222222] text-[#1A1D26] dark:text-slate-300">
+          <Button variant="outline" size="sm" onClick={handleToday} className="h-7 text-xs border-[#E5E7EB] dark:border-[#222222] text-[#1A1D26] dark:text-slate-300">
             Today
           </Button>
         </div>
@@ -118,9 +118,9 @@ export function CalendarView({ filteredTasks }: CalendarViewProps) {
       </div>
 
       {/* Calendar Grid */}
-      <div className="rounded-2xl border border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A] overflow-hidden shadow-sm">
+      <div className="rounded-2xl border border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A] overflow-hidden shadow-sm">
         {/* Weekday headers */}
-        <div className="grid grid-cols-7 border-b border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-center text-xs font-bold uppercase tracking-wider text-[#7D8592] dark:text-[#888888] py-2.5">
+        <div className="grid grid-cols-7 border-b border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-center text-xs font-bold uppercase tracking-wider text-[#7D8592] dark:text-[#888888] py-2.5">
           {daysOfWeek.map((day) => (
             <div key={day} className="py-1">
               {day}
@@ -129,7 +129,7 @@ export function CalendarView({ filteredTasks }: CalendarViewProps) {
         </div>
 
         {/* Days cells */}
-        <div className="grid grid-cols-7 divide-x divide-y divide-[#F0F1F5] dark:divide-[#222222]">
+        <div className="grid grid-cols-7 divide-x divide-y divide-[#E5E7EB] dark:divide-[#222222]">
           {calendarCells.map((cell, idx) => {
             // Find tasks due on this calendar day
             const dayTasks = filteredTasks.filter(

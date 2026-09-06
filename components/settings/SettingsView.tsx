@@ -188,7 +188,7 @@ export function SettingsView() {
   return (
     <div className="space-y-6 max-w-4xl">
       {/* Header */}
-      <div className="pb-4 border-b border-[#F0F1F5] dark:border-[#222222]">
+      <div className="pb-4 border-b border-[#E5E7EB] dark:border-[#222222]">
         <div className="flex items-center gap-2 mb-1">
           <Settings className="w-5 h-5 text-[#5D5FEF] dark:text-indigo-400" />
           <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-[#1A1D26] dark:text-white">
@@ -201,7 +201,7 @@ export function SettingsView() {
       </div>
 
       {/* Workspace Selector Bar */}
-      <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222]">
+      <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222]">
         <div className="text-xs font-semibold text-[#1A1D26] dark:text-white">
           Active Workspace Configuration:
         </div>
@@ -212,7 +212,7 @@ export function SettingsView() {
             dispatch(setActiveWorkspace(val));
           }}
         >
-          <SelectTrigger className="w-56 h-8 text-xs bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222]">
+          <SelectTrigger className="w-56 h-8 text-xs bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222]">
             <SelectValue placeholder="Select Workspace" />
           </SelectTrigger>
           <SelectContent>
@@ -226,7 +226,7 @@ export function SettingsView() {
       </div>
 
       {!isPrivileged ? (
-        <div className="py-16 px-4 text-center space-y-3 bg-white dark:bg-[#0A0A0A] rounded-2xl border border-[#F0F1F5] dark:border-[#222222]">
+        <div className="py-16 px-4 text-center space-y-3 bg-white dark:bg-[#0A0A0A] rounded-2xl border border-[#E5E7EB] dark:border-[#222222]">
           <ShieldAlert className="w-12 h-12 text-amber-500 mx-auto" />
           <h3 className="text-lg font-bold text-[#1A1D26] dark:text-white">
             Access Restricted
@@ -236,7 +236,7 @@ export function SettingsView() {
           </p>
         </div>
       ) : (
-        <div className="bg-white dark:bg-[#0A0A0A] rounded-2xl border border-[#F0F1F5] dark:border-[#222222] p-6">
+        <div className="bg-white dark:bg-[#0A0A0A] rounded-2xl border border-[#E5E7EB] dark:border-[#222222] p-6">
           <Tabs defaultValue="general" className="w-full">
             <TabsList className="grid grid-cols-5 w-full bg-[#F6F7FB] dark:bg-[#111111] p-1 rounded-xl">
               <TabsTrigger value="general" className="text-xs rounded-lg">General</TabsTrigger>
@@ -255,7 +255,7 @@ export function SettingsView() {
                     value={wsName}
                     onChange={(e) => setWsName(e.target.value)}
                     placeholder="Workspace Name"
-                    className="bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222] text-xs h-9"
+                    className="bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222] text-xs h-9"
                   />
                   <Button size="sm" className="bg-[#5D5FEF] hover:bg-[#4E50E6] text-white text-xs h-9 px-4" onClick={handleSaveGeneral}>
                     Save
@@ -281,7 +281,7 @@ export function SettingsView() {
                         className={`flex items-center justify-center space-x-2 p-2.5 rounded-xl border transition-all ${
                           isSelected
                             ? 'border-[#5D5FEF] bg-[#ECEBFF] text-[#5D5FEF] dark:bg-[#1A1A1A] dark:text-white dark:border-[#5D5FEF] font-semibold shadow-sm'
-                            : 'border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-[#7D8592] dark:text-[#888888] hover:text-[#1A1D26] dark:hover:text-white'
+                            : 'border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-[#7D8592] dark:text-[#888888] hover:text-[#1A1D26] dark:hover:text-white'
                         }`}
                       >
                         <IconComp className="w-4 h-4" />
@@ -292,7 +292,7 @@ export function SettingsView() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between p-3.5 rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111]/50">
+              <div className="flex items-center justify-between p-3.5 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111]/50">
                 <div>
                   <div className="text-xs font-semibold text-[#1A1D26] dark:text-slate-200">Compact Density View</div>
                   <div className="text-[11px] text-[#7D8592] dark:text-[#888888]">Reduce spacing for high-density information display</div>
@@ -303,7 +303,7 @@ export function SettingsView() {
                 />
               </div>
 
-              <div className="space-y-3 pt-3 border-t border-[#F0F1F5] dark:border-[#222222]">
+              <div className="space-y-3 pt-3 border-t border-[#E5E7EB] dark:border-[#222222]">
                 <label className="text-xs font-semibold text-[#1A1D26] dark:text-slate-200">Notification Preferences</label>
                 <div className="space-y-2 max-w-md">
                   {[
@@ -335,7 +335,7 @@ export function SettingsView() {
                 </div>
                 <form onSubmit={handleInvite} className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   <Select value={inviteUserId} onValueChange={setInviteUserId}>
-                    <SelectTrigger className="text-xs bg-white dark:bg-[#0A0A0A] border-[#F0F1F5] dark:border-[#222222]">
+                    <SelectTrigger className="text-xs bg-white dark:bg-[#0A0A0A] border-[#E5E7EB] dark:border-[#222222]">
                       <SelectValue placeholder="Select user..." />
                     </SelectTrigger>
                     <SelectContent>
@@ -351,7 +351,7 @@ export function SettingsView() {
                     value={inviteRole}
                     onValueChange={(val) => setInviteRole(val as 'Member' | 'Viewer')}
                   >
-                    <SelectTrigger className="text-xs bg-white dark:bg-[#0A0A0A] border-[#F0F1F5] dark:border-[#222222]">
+                    <SelectTrigger className="text-xs bg-white dark:bg-[#0A0A0A] border-[#E5E7EB] dark:border-[#222222]">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -375,7 +375,7 @@ export function SettingsView() {
                 <h4 className="text-xs font-bold text-[#1A1D26] dark:text-slate-200 uppercase tracking-wider mb-2">
                   Current Workspace Members
                 </h4>
-                <div className="divide-y divide-[#F0F1F5] dark:divide-[#222222] border border-[#F0F1F5] dark:border-[#222222] rounded-xl overflow-hidden">
+                <div className="divide-y divide-[#E5E7EB] dark:divide-[#222222] border border-[#E5E7EB] dark:border-[#222222] rounded-xl overflow-hidden">
                   {activeWorkspace?.members.map((member) => {
                     const user = mockUsers.find((u) => u.id === member.userId);
                     if (!user) return null;
@@ -413,7 +413,7 @@ export function SettingsView() {
                                   )
                                 }
                               >
-                                <SelectTrigger className="h-7 w-28 text-xs bg-[#F6F7FB] dark:bg-[#111111] border-[#F0F1F5] dark:border-[#222222]">
+                                <SelectTrigger className="h-7 w-28 text-xs bg-[#F6F7FB] dark:bg-[#111111] border-[#E5E7EB] dark:border-[#222222]">
                                   <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -460,7 +460,7 @@ export function SettingsView() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between p-3.5 rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111]">
+              <div className="flex items-center justify-between p-3.5 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111]">
                 <div>
                   <div className="text-xs font-semibold text-[#1A1D26] dark:text-slate-200">Simulate Network Latency</div>
                   <div className="text-[11px] text-[#7D8592] dark:text-[#888888]">Introduces an asynchronous delay to actions</div>
@@ -488,7 +488,7 @@ export function SettingsView() {
                 </div>
               )}
 
-              <div className="pt-2 border-t border-[#F0F1F5] dark:border-[#222222]">
+              <div className="pt-2 border-t border-[#E5E7EB] dark:border-[#222222]">
                 <div className="text-xs font-semibold text-[#1A1D26] dark:text-slate-300 mb-2">Test Optimistic Rollback</div>
                 <Button
                   variant="outline"
@@ -513,7 +513,7 @@ export function SettingsView() {
             {/* 4. Backup & Migration Tab */}
             <TabsContent value="backup" className="space-y-4 py-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] flex flex-col justify-between">
+                <div className="p-4 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] flex flex-col justify-between">
                   <div>
                     <div className="flex items-center space-x-2 text-xs font-bold text-[#1A1D26] dark:text-white mb-1">
                       <Download className="w-4 h-4 text-[#5D5FEF]" />
@@ -528,7 +528,7 @@ export function SettingsView() {
                   </Button>
                 </div>
 
-                <div className="p-4 rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] flex flex-col justify-between">
+                <div className="p-4 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] flex flex-col justify-between">
                   <div>
                     <div className="flex items-center space-x-2 text-xs font-bold text-[#1A1D26] dark:text-white mb-1">
                       <Upload className="w-4 h-4 text-[#00D2B4]" />
@@ -548,7 +548,7 @@ export function SettingsView() {
                     />
                     <Button
                       variant="outline"
-                      className="mt-4 w-full text-xs border-[#F0F1F5] dark:border-[#222222]"
+                      className="mt-4 w-full text-xs border-[#E5E7EB] dark:border-[#222222]"
                       onClick={() => fileInputRef.current?.click()}
                     >
                       Select JSON File

@@ -100,7 +100,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className="h-16 w-full border-b border-[#F0F1F5] dark:border-[#222222] bg-white/95 dark:bg-[#0A0A0A]/95 backdrop-blur-md px-4 sm:px-6 flex items-center justify-between z-30 shrink-0 transition-colors">
+    <header className="h-16 w-full border-b border-[#E5E7EB] dark:border-[#222222] bg-white/95 dark:bg-[#0A0A0A]/95 backdrop-blur-md px-4 sm:px-6 flex items-center justify-between z-30 shrink-0 transition-colors">
       {/* Left Section: Mobile Menu + Breadcrumbs + View Switcher */}
       <div className="flex items-center gap-3 sm:gap-6 min-w-0">
         {/* Mobile Nav Toggle */}
@@ -120,13 +120,13 @@ export function Navbar() {
             {activeWorkspace?.name || 'Workspace'}
           </span>
           <ChevronRight className="w-3.5 h-3.5 text-[#7D8592] dark:text-[#888888]" />
-          <span className="truncate max-w-[140px] text-xs font-semibold px-2 py-0.5 rounded bg-[#F6F7FB] dark:bg-[#111111] text-[#1A1D26] dark:text-slate-200 border border-[#F0F1F5] dark:border-[#222222]">
+          <span className="truncate max-w-[140px] text-xs font-semibold px-2 py-0.5 rounded bg-[#F6F7FB] dark:bg-[#111111] text-[#1A1D26] dark:text-slate-200 border border-[#E5E7EB] dark:border-[#222222]">
             {activeProject ? activeProject.name : 'All Projects'}
           </span>
         </div>
 
         {/* View Switcher Pills */}
-        <div className="flex items-center bg-[#F6F7FB] dark:bg-[#111111] p-1 rounded-xl gap-1 border border-[#F0F1F5] dark:border-[#222222]">
+        <div className="flex items-center bg-[#F6F7FB] dark:bg-[#111111] p-1 rounded-xl gap-1 border border-[#E5E7EB] dark:border-[#222222]">
           {viewOptions.map((v) => {
             const Icon = v.icon;
             const isActive =
@@ -157,11 +157,11 @@ export function Navbar() {
         {/* Command Palette Trigger */}
         <button
           onClick={() => dispatch(setCommandPaletteOpen(true))}
-          className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] hover:bg-[#ECEBFF]/50 dark:hover:bg-[#1A1A1A] text-[#7D8592] dark:text-[#888888] text-xs transition-colors"
+          className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] hover:bg-[#ECEBFF]/50 dark:hover:bg-[#1A1A1A] text-[#7D8592] dark:text-[#888888] text-xs transition-colors"
         >
           <Search className="w-3.5 h-3.5" />
           <span>Search or command...</span>
-          <kbd className="ml-2 font-mono text-[10px] bg-white dark:bg-[#1A1A1A] px-1.5 py-0.5 rounded border border-[#F0F1F5] dark:border-[#2E2E2E] text-[#1A1D26] dark:text-[#EDEDED]">
+          <kbd className="ml-2 font-mono text-[10px] bg-white dark:bg-[#1A1A1A] px-1.5 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2E2E2E] text-[#1A1D26] dark:text-[#EDEDED]">
             Ctrl+K
           </kbd>
         </button>
@@ -176,12 +176,12 @@ export function Navbar() {
             >
               <Bell className="w-4 h-4" />
               {unreadCount > 0 && (
-                <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-[#FF754C] ring-2 ring-white dark:ring-[#0A0A0A]" />
+                <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-[#FF754C]" />
               )}
             </Button>
           </PopoverTrigger>
-          <PopoverContent align="end" className="w-80 sm:w-96 p-0 shadow-xl border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
-            <div className="p-3 border-b border-[#F0F1F5] dark:border-[#222222] flex items-center justify-between">
+          <PopoverContent align="end" className="w-80 sm:w-96 p-0 shadow-xl border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
+            <div className="p-3 border-b border-[#E5E7EB] dark:border-[#222222] flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <h4 className="font-semibold text-sm text-[#1A1D26] dark:text-white">Notifications</h4>
                 {unreadCount > 0 && (
@@ -199,7 +199,7 @@ export function Navbar() {
                 </button>
               )}
             </div>
-            <div className="max-h-80 overflow-y-auto divide-y divide-[#F0F1F5] dark:divide-[#222222]">
+            <div className="max-h-80 overflow-y-auto divide-y divide-[#E5E7EB] dark:divide-[#222222]">
               {userNotifications.length === 0 ? (
                 <div className="p-6 text-center text-xs text-[#7D8592]">
                   No notifications yet. You are all caught up!
@@ -251,12 +251,12 @@ export function Navbar() {
                 {/* Active Presence Indicator Dot */}
                 <span
                   title="Active"
-                  className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#00D2B4] ring-2 ring-white dark:ring-[#0A0A0A]"
+                  className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#00D2B4]"
                 />
               </div>
             </button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-56 shadow-xl border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
+          <DropdownMenuContent align="end" className="w-56 shadow-xl border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
             <DropdownMenuLabel className="font-normal">
               <div className="flex flex-col space-y-1">
                 <p className="text-sm font-semibold text-[#1A1D26] dark:text-white leading-none">
@@ -278,7 +278,7 @@ export function Navbar() {
                 </div>
               </div>
             </DropdownMenuLabel>
-            <DropdownMenuSeparator className="bg-[#F0F1F5] dark:bg-[#222222]" />
+            <DropdownMenuSeparator className="bg-[#E5E7EB] dark:bg-[#222222]" />
             <DropdownMenuItem
               onClick={() =>
                 dispatch(setAuthModalOpen({ open: true, mode: 'profile' }))
@@ -295,7 +295,7 @@ export function Navbar() {
               <Settings className="w-4 h-4 mr-2 text-[#7D8592]" />
               <span>Workspace Settings</span>
             </DropdownMenuItem>
-            <DropdownMenuSeparator className="bg-[#F0F1F5] dark:bg-[#222222]" />
+            <DropdownMenuSeparator className="bg-[#E5E7EB] dark:bg-[#222222]" />
             <DropdownMenuItem
               onClick={() => {
                 dispatch(logout());

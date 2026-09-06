@@ -106,9 +106,9 @@ export function CommandPalette() {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => dispatch(setCommandPaletteOpen(open))}>
-      <DialogContent className="p-0 overflow-hidden sm:max-w-xl bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] shadow-2xl rounded-2xl">
+      <DialogContent className="p-0 overflow-hidden sm:max-w-xl bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] shadow-2xl rounded-2xl">
         {/* Search header */}
-        <div className="flex items-center px-4 py-3 border-b border-[#F0F1F5] dark:border-[#222222]">
+        <div className="flex items-center px-4 py-3 border-b border-[#E5E7EB] dark:border-[#222222]">
           <Search className="w-4 h-4 text-[#7D8592] dark:text-[#888888] mr-2 shrink-0" />
           <input
             value={query}
@@ -117,7 +117,7 @@ export function CommandPalette() {
             className="w-full bg-transparent text-sm text-[#1A1D26] dark:text-[#EDEDED] placeholder:text-[#7D8592] dark:placeholder:text-[#888888] outline-none"
             autoFocus
           />
-          <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono text-[#7D8592] dark:text-[#888888] bg-[#F6F7FB] dark:bg-[#1A1A1A] border border-[#F0F1F5] dark:border-[#2E2E2E] rounded">
+          <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono text-[#7D8592] dark:text-[#888888] bg-[#F6F7FB] dark:bg-[#1A1A1A] border border-[#E5E7EB] dark:border-[#2E2E2E] rounded">
             ESC
           </kbd>
         </div>

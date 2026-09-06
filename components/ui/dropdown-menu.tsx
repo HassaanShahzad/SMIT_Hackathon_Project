@@ -40,7 +40,7 @@ const DropdownMenuSubContent = React.forwardRef<
   <DropdownMenuPrimitive.SubContent
     ref={ref}
     className={cn(
-      'z-50 min-w-[8rem] overflow-hidden rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#111111] p-1 text-[#1A1D26] dark:text-[#EDEDED] shadow-xl',
+      'z-50 min-w-[8rem] overflow-hidden rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#111111] p-1 text-[#1A1D26] dark:text-[#EDEDED] shadow-xl',
       className
     )}
     {...props}
@@ -57,7 +57,7 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={cn(
-        'z-50 min-w-[9rem] overflow-hidden rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#111111] p-1 text-[#1A1D26] dark:text-[#EDEDED] shadow-xl data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',
+        'z-50 min-w-[9rem] overflow-hidden rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#111111] p-1 text-[#1A1D26] dark:text-[#EDEDED] shadow-xl data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',
         className
       )}
       {...props}
@@ -129,7 +129,7 @@ const DropdownMenuSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
-    className={cn('-mx-1 my-1 h-px bg-[#F0F1F5] dark:bg-[#222222]', className)}
+    className={cn('-mx-1 my-1 h-px bg-[#E5E7EB] dark:bg-[#222222]', className)}
     {...props}
   />
 ));

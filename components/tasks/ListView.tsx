@@ -213,7 +213,7 @@ export function ListView({ filteredTasks }: ListViewProps) {
             <DropdownMenuTrigger asChild disabled={!userCanEdit}>
               <button
                 type="button"
-                className="inline-flex items-center space-x-1.5 text-xs rounded-xl px-2.5 py-1 bg-white dark:bg-[#111111] border border-[#F0F1F5] dark:border-[#222222] hover:bg-[#F6F7FB] dark:hover:bg-[#1A1A1A] transition-colors shadow-sm text-[#1A1D26] dark:text-[#EDEDED]"
+                className="inline-flex items-center space-x-1.5 text-xs rounded-xl px-2.5 py-1 bg-white dark:bg-[#111111] border border-[#E5E7EB] dark:border-[#222222] hover:bg-[#F6F7FB] dark:hover:bg-[#1A1A1A] transition-colors shadow-sm text-[#1A1D26] dark:text-[#EDEDED]"
               >
                 <span
                   className={`w-1.5 h-1.5 rounded-full ${
@@ -229,7 +229,7 @@ export function ListView({ filteredTasks }: ListViewProps) {
                 <span className="font-semibold">{task.status.replace('_', ' ')}</span>
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
+            <DropdownMenuContent className="border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
               <DropdownMenuItem
                 onClick={() =>
                   dispatch(updateTask({ id: task.id, updates: { status: 'BACKLOG' } }))
@@ -391,11 +391,11 @@ export function ListView({ filteredTasks }: ListViewProps) {
             {/* Bulk Status Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="h-7 text-xs font-semibold border-[#EBEDF2] dark:border-slate-800">
+                <Button variant="outline" size="sm" className="h-7 text-xs font-semibold border-[#E5E7EB] dark:border-[#222222]">
                   Change Status <ChevronDown className="ml-1 h-3 w-3" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="border-[#EBEDF2] dark:border-slate-800 bg-white dark:bg-[#0F172A]">
+              <DropdownMenuContent className="border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
                 <DropdownMenuItem onClick={() => handleBulkStatus('TODO')}>To Do</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleBulkStatus('IN_PROGRESS')}>In Progress</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleBulkStatus('DONE')}>Done</DropdownMenuItem>
@@ -406,11 +406,11 @@ export function ListView({ filteredTasks }: ListViewProps) {
             {/* Bulk Priority Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="h-7 text-xs font-semibold border-[#EBEDF2] dark:border-slate-800">
+                <Button variant="outline" size="sm" className="h-7 text-xs font-semibold border-[#E5E7EB] dark:border-[#222222]">
                   Change Priority <ChevronDown className="ml-1 h-3 w-3" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="border-[#EBEDF2] dark:border-slate-800 bg-white dark:bg-[#0F172A]">
+              <DropdownMenuContent className="border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A]">
                 <DropdownMenuItem onClick={() => handleBulkPriority('LOW')}>Low</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleBulkPriority('MEDIUM')}>Medium</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleBulkPriority('HIGH')}>High</DropdownMenuItem>
@@ -441,11 +441,11 @@ export function ListView({ filteredTasks }: ListViewProps) {
       )}
 
       {/* Main Table View (Grouped or Flat) */}
-      <div className="rounded-2xl border border-[#F0F1F5] dark:border-[#222222] bg-white dark:bg-[#0A0A0A] overflow-hidden shadow-sm">
+      <div className="rounded-2xl border border-[#E5E7EB] dark:border-[#222222] bg-white dark:bg-[#0A0A0A] overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="border-b border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-[11px] font-bold uppercase tracking-wider text-[#7D8592] dark:text-[#888888]">
+              <tr className="border-b border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-[11px] font-bold uppercase tracking-wider text-[#7D8592] dark:text-[#888888]">
                 <th className="py-3 px-4 w-10">
                   <Checkbox checked={isAllSelected} onCheckedChange={handleSelectAll} />
                 </th>
@@ -461,7 +461,7 @@ export function ListView({ filteredTasks }: ListViewProps) {
 
             {/* Group by Status display */}
             {groupBy === 'status' ? (
-              <tbody className="divide-y divide-[#F0F1F5] dark:divide-[#222222] text-xs">
+              <tbody className="divide-y divide-[#E5E7EB] dark:divide-[#222222] text-xs">
                 {statusGroups.map((group) => {
                   const groupTasks = filteredTasks.filter((t) => t.status === group.id);
                   if (groupTasks.length === 0) return null;
@@ -494,7 +494,7 @@ export function ListView({ filteredTasks }: ListViewProps) {
               </tbody>
             ) : (
               /* Flat Table View */
-              <tbody className="divide-y divide-[#EBEDF2] dark:divide-slate-800 text-xs">
+              <tbody className="divide-y divide-[#E5E7EB] dark:divide-[#222222] text-xs">
                 {filteredTasks.map((task) => renderTaskRow(task))}
                 {filteredTasks.length === 0 && (
                   <tr>

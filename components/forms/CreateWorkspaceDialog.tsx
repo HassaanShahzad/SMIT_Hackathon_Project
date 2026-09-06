@@ -136,7 +136,7 @@ export function CreateWorkspaceDialog() {
                   onClick={() => setValue('color', c.value)}
                   className={`w-7 h-7 rounded-full ${c.bg} flex items-center justify-center transition-all ${
                     selectedColor === c.value
-                      ? 'ring-2 ring-white ring-offset-2 ring-offset-slate-900 scale-110'
+                      ? 'ring-2 ring-[#5D5FEF] scale-110'
                       : 'opacity-70 hover:opacity-100'
                   }`}
                   title={c.label}
@@ -161,7 +161,7 @@ export function CreateWorkspaceDialog() {
                     className={`flex flex-col items-center justify-center p-2 rounded-xl border transition-all ${
                       isSelected
                         ? 'border-[#5D5FEF] bg-[#ECEBFF] text-[#5D5FEF] dark:bg-[#1A1A1A] dark:text-white font-semibold'
-                        : 'border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-[#7D8592] dark:text-[#888888] hover:text-[#1A1D26] dark:hover:text-white'
+                        : 'border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] text-[#7D8592] dark:text-[#888888] hover:text-[#1A1D26] dark:hover:text-white'
                     }`}
                   >
                     <IconComponent className="w-5 h-5 mb-1" />

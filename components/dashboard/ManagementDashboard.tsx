@@ -241,7 +241,7 @@ export function ManagementDashboard() {
       {/* KPI Metrics Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Total Tasks */}
-        <div className="bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] rounded-2xl p-5 shadow-sm flex items-center justify-between">
+        <div className="bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] rounded-2xl p-5 shadow-sm flex items-center justify-between">
           <div>
             <p className="text-xs font-bold text-[#7D8592] dark:text-[#888888] uppercase tracking-wider">
               Total Tasks
@@ -259,7 +259,7 @@ export function ManagementDashboard() {
         </div>
 
         {/* Completion Rate */}
-        <div className="bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] rounded-2xl p-5 shadow-sm flex items-center justify-between">
+        <div className="bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] rounded-2xl p-5 shadow-sm flex items-center justify-between">
           <div>
             <p className="text-xs font-bold text-[#7D8592] dark:text-[#888888] uppercase tracking-wider">
               Completion Rate
@@ -277,7 +277,7 @@ export function ManagementDashboard() {
         </div>
 
         {/* Overdue Attention */}
-        <div className="bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] rounded-2xl p-5 shadow-sm flex items-center justify-between">
+        <div className="bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] rounded-2xl p-5 shadow-sm flex items-center justify-between">
           <div>
             <p className="text-xs font-bold text-[#7D8592] dark:text-[#888888] uppercase tracking-wider">
               Attention Needed
@@ -295,7 +295,7 @@ export function ManagementDashboard() {
         </div>
 
         {/* Projects & Workspaces */}
-        <div className="bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] rounded-2xl p-5 shadow-sm flex items-center justify-between">
+        <div className="bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] rounded-2xl p-5 shadow-sm flex items-center justify-between">
           <div>
             <p className="text-xs font-bold text-[#7D8592] dark:text-[#888888] uppercase tracking-wider">
               Active Projects
@@ -316,7 +316,7 @@ export function ManagementDashboard() {
       {/* Two Column Section: Project Delivery Pipelines + Workspace Portfolio */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Project Delivery Pipelines */}
-        <div className="bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] rounded-2xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-5">
             <div className="flex items-center gap-2">
               <TrendingUp className="w-4 h-4 text-[#5D5FEF] dark:text-indigo-400" />
@@ -345,7 +345,7 @@ export function ManagementDashboard() {
                 return (
                   <div
                     key={proj.id}
-                    className="p-4 rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB]/50 dark:bg-[#111111]/50 hover:border-[#5D5FEF]/40 transition-colors"
+                    className="p-4 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB]/50 dark:bg-[#111111]/50 hover:border-[#5D5FEF]/40 transition-colors"
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="min-w-0">
@@ -416,7 +416,7 @@ export function ManagementDashboard() {
         </div>
 
         {/* Workspace Portfolio */}
-        <div className="bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] rounded-2xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-5">
             <div className="flex items-center gap-2">
               <Layers className="w-4 h-4 text-[#6C5DD3] dark:text-purple-400" />
@@ -443,7 +443,7 @@ export function ManagementDashboard() {
                   className={`p-4 rounded-xl border transition-colors ${
                     isActive
                       ? 'border-[#5D5FEF] bg-[#ECEBFF]/30 dark:bg-[#5D5FEF]/10'
-                      : 'border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB]/50 dark:bg-[#111111]/50'
+                      : 'border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB]/50 dark:bg-[#111111]/50'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-2">
@@ -496,7 +496,7 @@ export function ManagementDashboard() {
                     </div>
                   </div>
 
-                  <div className="mt-3 pt-3 border-t border-[#F0F1F5] dark:border-[#222222] flex items-center justify-between text-xs text-[#7D8592] dark:text-[#888888]">
+                  <div className="mt-3 pt-3 border-t border-[#E5E7EB] dark:border-[#222222] flex items-center justify-between text-xs text-[#7D8592] dark:text-[#888888]">
                     <span>{wsProjectCount} projects</span>
                     <span>{wsTaskCount} tasks</span>
                     <span>{ws.members?.length || 1} members</span>
@@ -511,7 +511,7 @@ export function ManagementDashboard() {
       {/* Two Column Section: Team Directory + Recent Organization Activity */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Team Directory (With Role Management for Owner/Admin only) */}
-        <div className="bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] rounded-2xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-5">
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-[#5D5FEF] dark:text-indigo-400" />
@@ -524,11 +524,11 @@ export function ManagementDashboard() {
             </span>
           </div>
 
-          <div className="divide-y divide-[#F0F1F5] dark:divide-[#222222]">
+          <div className="divide-y divide-[#E5E7EB] dark:divide-[#222222]">
             {mockUsers.map((u) => (
               <div key={u.id} className="py-3 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3 min-w-0">
-                  <Avatar className="w-9 h-9 ring-1 ring-[#F0F1F5] dark:ring-[#222222] shrink-0">
+                  <Avatar className="w-9 h-9 ring-1 ring-[#E5E7EB] dark:ring-[#222222] shrink-0">
                     <AvatarImage src={u.avatarUrl} alt={u.name} />
                     <AvatarFallback className="bg-[#5D5FEF] text-white text-xs font-bold">
                       {u.name.slice(0, 2).toUpperCase()}
@@ -550,7 +550,7 @@ export function ManagementDashboard() {
                       value={u.role}
                       onValueChange={(val) => handleRoleChange(u.id, u.name, val as UserRole)}
                     >
-                      <SelectTrigger className="h-7 text-xs w-28 rounded-lg border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] font-semibold text-[#5D5FEF] dark:text-white">
+                      <SelectTrigger className="h-7 text-xs w-28 rounded-lg border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB] dark:bg-[#111111] font-semibold text-[#5D5FEF] dark:text-white">
                         <SelectValue placeholder="Role" />
                       </SelectTrigger>
                       <SelectContent>
@@ -575,7 +575,7 @@ export function ManagementDashboard() {
         </div>
 
         {/* Recent Organization Activity */}
-        <div className="bg-white dark:bg-[#0A0A0A] border border-[#F0F1F5] dark:border-[#222222] rounded-2xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-[#0A0A0A] border border-[#E5E7EB] dark:border-[#222222] rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-5">
             <div className="flex items-center gap-2">
               <Activity className="w-4 h-4 text-[#FF754C]" />
@@ -599,7 +599,7 @@ export function ManagementDashboard() {
                 return (
                   <div
                     key={act.id}
-                    className="p-3 rounded-xl border border-[#F0F1F5] dark:border-[#222222] bg-[#F6F7FB]/50 dark:bg-[#111111]/50 text-xs"
+                    className="p-3 rounded-xl border border-[#E5E7EB] dark:border-[#222222] bg-[#F6F7FB]/50 dark:bg-[#111111]/50 text-xs"
                   >
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2 truncate">
